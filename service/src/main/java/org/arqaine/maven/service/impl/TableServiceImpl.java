@@ -247,7 +247,7 @@ public class TableServiceImpl implements TableService {
                 Files.createDirectories(outputPath);
 
                 // Specify the output file path
-                outputFilePath = outputPath.resolve("MyTable.txt");
+                outputFilePath = outputPath.resolve(outputFile);
 
                 // Copy the content of the input stream to the output file
                 Files.copy(inputStream, outputFilePath, StandardCopyOption.REPLACE_EXISTING);
@@ -335,21 +335,14 @@ public class TableServiceImpl implements TableService {
             loadTableFromFile(fileInTargetFolder.getAbsolutePath());
             table.setFilePath(fileInTargetFolder.getAbsolutePath()); // Set the correct file path
         } else {
-            // checks if there is a file outside the jar file
-            File file = new File(fileName);
-            if (file.exists() && file.isFile()) {
-                // load txt file from outside the jar
-                loadTableFromFile(fileName);
-                table.setFilePath(file.getAbsolutePath()); // Set the correct file path
-            } else {
-                // load txt file from jar
-                loadTableFromJar(jarFileName, fileName);
-                table.setFilePath(jarFileName);
-            }
+            // If the file is not in the target folder or outside the jar, load from jar
+            loadTableFromJar(jarFileName, fileName);
+            table.setFilePath(fileInTargetFolder.exists() ? fileInTargetFolder.getAbsolutePath() : jarFileName);
         }
 
         return table.getTableData();
     }
+
 
 
 
