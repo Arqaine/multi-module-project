@@ -23,7 +23,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>org.arqaine.maven.Main</mainClass>
+                  <mainClass>org.arqaine.maven.app.Main</mainClass>
                 </transformer>
               </transformers>
             </configuration>

@@ -1,9 +1,12 @@
 package org.arqaine.maven.model;
 
-import java.util.*;
+import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.ArrayList;
 
 public class Table {
-    private ArrayList<LinkedHashMap<String, String>> tableData;
+    private List<LinkedHashMap<String, String>> tableData;
+
 
     private String filePath;
 
@@ -11,11 +14,11 @@ public class Table {
         tableData = new ArrayList<>();
     }
 
-    public ArrayList<LinkedHashMap<String, String>> getTableData() {
+    public List<LinkedHashMap<String, String>> getTableData() {
         return tableData;
     }
 
-    public void setTableData(ArrayList<LinkedHashMap<String, String>> tableData) {
+    public void setTableData(List<LinkedHashMap<String, String>> tableData) {
         this.tableData = tableData;
     }
 

@@ -2,7 +2,7 @@ package org.arqaine.maven.app;
 
 import org.arqaine.maven.model.Table;
 import org.arqaine.maven.service.TableService;
-import org.arqaine.maven.service.TableServiceImpl;
+import org.arqaine.maven.service.impl.TableServiceImpl;
 import org.arqaine.maven.util.InputHandler;
 
 import java.util.Scanner;
@@ -11,9 +11,8 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
         Table table = new Table();
-        TableService tableService = new TableServiceImpl();
+        TableService tableService = new TableServiceImpl(table);
         InputHandler inputHandler = new InputHandler();
 
         //Initializing the contents of the table
@@ -42,17 +41,27 @@ public class Main {
                     //Search
                     String searchChoice = inputHandler.getChoice(scanner, "Do you want to search for a key (K) or a value (V)? ");
                     System.out.print("Enter the target: ");
-                    tableService.search(searchChoice);
+                    String target = scanner.next();
+                    String searchResult = tableService.search(searchChoice, target);
+
+                    inputHandler.printCustomMessage(searchResult);
                     break;
                 case 2:
                     //Edit
-                    tableService.editCell();
+                    String keyToEdit = inputHandler.getUserInputString(scanner, "Enter the key you want to edit: ");
+                    
+
+                    // Call the editCell method with the specified key
+                    tableService.editCell(keyToEdit);
+
+                    // Save the updated table data to a file
                     tableService.saveTableToFile(table.getTableData(), table.getFilePath());
                     break;
                 case 3:
                     //Print Table
                     System.out.println("\nTABLE\n");
-                    tableService.printTable();
+                    String printedTable = tableService.printTable();
+                    System.out.println(printedTable);
                     tableService.saveTableToFile(table.getTableData(), table.getFilePath());
                     break;
                 case 4:
@@ -60,17 +69,26 @@ public class Main {
                     int newRows = inputHandler.getUserInput(scanner, "Enter new number of rows: ");
                     int newCols = inputHandler.getUserInput(scanner, "Enter new number of columns: ");
                     tableService.reset(newRows, newCols);
+
                     tableService.saveTableToFile(table.getTableData(), table.getFilePath());
                     inputHandler.printCustomMessage("Table reset with new random data.");
                     break;
                 case 5:
                     //Add new row
-                    tableService.addNewRow();
+                    int rowIndex = inputHandler.getUserInput(scanner, "Enter the row index where you want to insert: ");
+                    int numColumns = inputHandler.getUserInput(scanner, "Enter the number of columns to insert: ");
+
+                    String addRowMessage = tableService.addNewRow(rowIndex, numColumns);
+                    inputHandler.printCustomMessage(addRowMessage);
+
                     tableService.saveTableToFile(table.getTableData(), table.getFilePath());
                     break;
                 case 6:
                     //Sort row
-                    tableService.sortRow();
+                    int sortRowIndex = inputHandler.getUserInput(scanner, "Enter the row index you want to sort: ");
+                    String sortMessage = tableService.sortRow(sortRowIndex);
+                    inputHandler.printCustomMessage(sortMessage);
+
                     tableService.saveTableToFile(table.getTableData(), table.getFilePath());
                     break;
                 case 7:

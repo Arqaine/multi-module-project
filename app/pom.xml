@@ -45,7 +45,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>org.arqaine.maven.Main</mainClass>
+                                    <mainClass>org.arqaine.maven.app.Main</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
