@@ -22,4 +22,5 @@ public interface TableService {
     List<LinkedHashMap<String, String>> initializeTable(String[] args, Table table);
     LinkedHashMap<String, String> generateRandomKeyValuePairs(int numColumns);
 
+
 }

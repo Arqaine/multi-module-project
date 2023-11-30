@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.arqaine.maven.service.impl.TableServiceImplTest" time="6.508" tests="15" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\ARMAYNE\Projects\git projects\multi-module-project\service\target\test-classes;D:\ARMAYNE\Projects\git projects\multi-module-project\service\target\classes;D:\ARMAYNE\Projects\git projects\multi-module-project\model\target\classes;D:\ARMAYNE\Projects\git projects\multi-module-project\util\target\classes;C:\Users\armay\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\armay\.m2\repository\commons-io\commons-io\2.14.0\commons-io-2.14.0.jar;C:\Users\armay\.m2\repository\org\mockito\mockito-core\5.6.0\mockito-core-5.6.0.jar;C:\Users\armay\.m2\repository\net\bytebuddy\byte-buddy\1.14.8\byte-buddy-1.14.8.jar;C:\Users\armay\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.8\byte-buddy-agent-1.14.8.jar;C:\Users\armay\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\armay\.m2\repository\junit\junit\4.13.1\junit-4.13.1.jar;C:\Users\armay\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="OpenLogic"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://openlogic.com/"/>
+    <property name="user.timezone" value="Asia/Manila"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="PH"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\OpenLogic\jdk-11.0.20.8-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\armay\AppData\Local\Temp\surefire2488382976497835114\surefirebooter-20231130143009931_3.jar C:\Users\armay\AppData\Local\Temp\surefire2488382976497835114 2023-11-30T14-30-03_015-jvmRun1 surefire-20231130143009931_1tmp surefire_0-20231130143009931_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\ARMAYNE\Projects\git projects\multi-module-project\service\target\test-classes;D:\ARMAYNE\Projects\git projects\multi-module-project\service\target\classes;D:\ARMAYNE\Projects\git projects\multi-module-project\model\target\classes;D:\ARMAYNE\Projects\git projects\multi-module-project\util\target\classes;C:\Users\armay\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\armay\.m2\repository\commons-io\commons-io\2.14.0\commons-io-2.14.0.jar;C:\Users\armay\.m2\repository\org\mockito\mockito-core\5.6.0\mockito-core-5.6.0.jar;C:\Users\armay\.m2\repository\net\bytebuddy\byte-buddy\1.14.8\byte-buddy-1.14.8.jar;C:\Users\armay\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.8\byte-buddy-agent-1.14.8.jar;C:\Users\armay\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\armay\.m2\repository\junit\junit\4.13.1\junit-4.13.1.jar;C:\Users\armay\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\armay"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.home" value="C:\Program Files\OpenLogic\jdk-11.0.20.8-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\ARMAYNE\Projects\git projects\multi-module-project\service"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\armay\AppData\Local\Temp\surefire2488382976497835114\surefirebooter-20231130143009931_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="11.0.20+8-adhoc..jdk11u"/>
+    <property name="user.name" value="Arqaine"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="OpenLogic-OpenJDK"/>
+    <property name="localRepository" value="C:\Users\armay\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://techsupport.roguewave.com/"/>
+    <property name="java.io.tmpdir" value="C:\Users\armay\AppData\Local\Temp\"/>
+    <property name="java.version" value="11.0.20"/>
+    <property name="user.dir" value="D:\ARMAYNE\Projects\git projects\multi-module-project\service"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\OpenLogic\jdk-11.0.20.8-hotspot\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\OpenLogic\jdk-8.0.382.05-hotspot\bin;C:\Program Files\OpenLogic\jdk-11.0.20.8-hotspot\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\nodejs;C:\Program Files\dotnet\;C:\Program Files\apache-maven-3.9.5\bin;C:\Users\armay\AppData\Local\Microsoft\WindowsApps;C:\Users\armay\AppData\Roaming\Composer\vendor\bin;C:\Users\armay\AppData\Roaming\npm;C:\Users\armay\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\armay\.dotnet\tools;C:\Users\armay\AppData\Local\GitHubDesktop\bin;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="OpenLogic"/>
+    <property name="java.vm.version" value="11.0.20+8-adhoc..jdk11u"/>
+    <property name="java.specification.maintenance.version" value="2"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="55.0"/>
+  </properties>
+  <testcase name="testEditCell" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="5.786"/>
+  <testcase name="testInitializeTable_FileInTargetFolder_LoadsFromFile" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.099"/>
+  <testcase name="testReset" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.073">
+    <system-out><![CDATA[Test Reset
+]]></system-out>
+  </testcase>
+  <testcase name="testGenerateRandomKeyValuePairs" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.0"/>
+  <testcase name="testPrintTable" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.022">
+    <system-out><![CDATA[Test Print
+]]></system-out>
+  </testcase>
+  <testcase name="testAddNewRowInvalidIndex" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.004">
+    <system-out><![CDATA[Test Add New Row Invalid Index
+]]></system-out>
+  </testcase>
+  <testcase name="testLoadTableFromFile" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.009"/>
+  <testcase name="testEditCell_KeyNotFound_Exception" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.048"/>
+  <testcase name="testSortRowInvalidIndex" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.032">
+    <system-out><![CDATA[Test Sort Row Invalid Index
+]]></system-out>
+  </testcase>
+  <testcase name="testSearchKeyNotFound" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.021">
+    <system-out><![CDATA[Test Search (Key Not Found)
+]]></system-out>
+  </testcase>
+  <testcase name="testInitializeTable_FileInJar_LoadsFromFile" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.066"/>
+  <testcase name="testAddNewRowSuccess" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.017">
+    <system-out><![CDATA[Test Add New Row Success
+]]></system-out>
+  </testcase>
+  <testcase name="testSearchSuccess" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.014">
+    <system-out><![CDATA[Test Search
+]]></system-out>
+  </testcase>
+  <testcase name="testSaveTableToFile" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.03"/>
+  <testcase name="testSortRow" classname="org.arqaine.maven.service.impl.TableServiceImplTest" time="0.012">
+    <system-out><![CDATA[Test Sort Row
+]]></system-out>
+  </testcase>
+</testsuite>

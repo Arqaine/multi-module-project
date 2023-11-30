@@ -4,6 +4,12 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Scanner;
 
 public class InputHandler {
+    private final Scanner scanner;
+
+    public InputHandler(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
     public void printCustomMessage(String message) {
         int messageLength = message.length();
         String separator = StringUtils.repeat("=", messageLength);

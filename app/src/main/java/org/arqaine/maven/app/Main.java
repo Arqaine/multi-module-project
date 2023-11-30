@@ -12,8 +12,9 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         Table table = new Table();
-        TableService tableService = new TableServiceImpl(table);
-        InputHandler inputHandler = new InputHandler();
+        InputHandler inputHandler = new InputHandler(scanner);
+
+        TableService tableService = new TableServiceImpl(table, scanner, inputHandler);
 
         //Initializing the contents of the table
         tableService.initializeTable(args, table);
@@ -49,10 +50,11 @@ public class Main {
                 case 2:
                     //Edit
                     String keyToEdit = inputHandler.getUserInputString(scanner, "Enter the key you want to edit: ");
-                    
 
                     // Call the editCell method with the specified key
                     tableService.editCell(keyToEdit);
+
+
 
                     // Save the updated table data to a file
                     tableService.saveTableToFile(table.getTableData(), table.getFilePath());

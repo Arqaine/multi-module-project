@@ -31,18 +31,22 @@ import java.io.FileWriter;
 import java.io.FileReader;
 
 public class TableServiceImpl implements TableService {
-    final int CHAR_LENGTH = 3;
-    Scanner scanner = new Scanner(System.in);
-    InputHandler inputHandler = new InputHandler();
+    private static final int CHAR_LENGTH = 3;
     private final Table table;
     // Specify the output path using an environment variable
-    private final String outputDirectory = System.getenv("OUTPUT_DIRECTORY");
+    private String outputDirectory = System.getenv("OUTPUT_DIRECTORY");
     private Path outputPath = Paths.get(outputDirectory);
     private Path outputFilePath;
 
-    public TableServiceImpl(Table table) {
+    private final Scanner scanner;
+    private final InputHandler inputHandler;
+
+    public TableServiceImpl(Table table, Scanner scanner, InputHandler inputHandler) {
         this.table = table;
+        this.scanner = scanner;
+        this.inputHandler = inputHandler;
     }
+
 
 
     // Override methods from the interface
@@ -55,6 +59,7 @@ public class TableServiceImpl implements TableService {
             table.getTableData().add(newRow);
         }
     }
+
     @Override
     public String search(String searchChoice, String target) {
         List<String> results = new ArrayList<>();
@@ -156,6 +161,16 @@ public class TableServiceImpl implements TableService {
         }
     }
 
+
+    private boolean checkKeyExistsInOtherRows(LinkedHashMap<String, String> currentRow, String key) {
+        for (LinkedHashMap<String, String> otherRow : table.getTableData()) {
+            if (otherRow != currentRow && otherRow.containsKey(key)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void editValue(LinkedHashMap<String, String> row, String keyToEdit) {
         // Prompt user for the new value
         String newValue = inputHandler.getUserInputString(scanner, "Enter the new value: ");
@@ -164,7 +179,6 @@ public class TableServiceImpl implements TableService {
         row.put(keyToEdit, newValue);
         inputHandler.printCustomMessage("Value updated successfully.");
     }
-
 
     @Override
     public String printTable() {
@@ -255,7 +269,6 @@ public class TableServiceImpl implements TableService {
                 // BufferedReader should be created after the InputStream is copied
                 loadTableFromReader(new BufferedReader(new InputStreamReader(new FileInputStream(outputFilePath.toFile()))));
 
-                System.out.println("Loaded Table from Jar");
             } else {
                 inputHandler.printCustomMessage("\nResource not found.");
             }
@@ -269,7 +282,6 @@ public class TableServiceImpl implements TableService {
     public List<LinkedHashMap<String, String>> loadTableFromFile(String fileName) {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             loadTableFromReader(reader);
-            System.out.println("Loaded Table from File");
         } catch (IOException e) {
             inputHandler.printCustomMessage("An error occurred while reading the file: " + e.getMessage());
         }
@@ -344,17 +356,6 @@ public class TableServiceImpl implements TableService {
     }
 
 
-
-
-    private boolean checkKeyExistsInOtherRows(LinkedHashMap<String, String> currentRow, String key) {
-        for (LinkedHashMap<String, String> otherRow : table.getTableData()) {
-            if (otherRow != currentRow && otherRow.containsKey(key)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     @Override
     public LinkedHashMap<String, String> generateRandomKeyValuePairs(int numColumns) {
         LinkedHashMap<String, String> randomPairs = new LinkedHashMap<>();
@@ -378,7 +379,6 @@ public class TableServiceImpl implements TableService {
         }
         return randomString.toString();
     }
-
 
 
 
