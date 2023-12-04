@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.arqaine.maven.service.impl.TableServiceImplTest
--------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.508 s -- in org.arqaine.maven.service.impl.TableServiceImplTest

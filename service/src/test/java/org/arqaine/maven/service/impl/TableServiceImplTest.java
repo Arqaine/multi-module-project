@@ -1,5 +1,7 @@
 package org.arqaine.maven.service.impl;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.apache.commons.io.IOUtils;
 import org.arqaine.maven.model.Table;
 import org.arqaine.maven.service.TableService;
@@ -8,6 +10,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -22,7 +25,7 @@ import java.util.zip.ZipOutputStream;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
-
+@RunWith(JUnitParamsRunner.class)
 public class TableServiceImplTest {
     private TableService tableService;
     private InputHandler inputHandler;
@@ -61,28 +64,18 @@ public class TableServiceImplTest {
     }
 
     @Test
-    public void testSearchSuccess() {
+    @Parameters({
+            "K, key1, Found 'key1' in row 0 with key 'key1' and value 'value1'.",
+            "K, nonexistentKey, No instances of 'nonexistentKey' found."
+    })
+    public void testSearch(String searchChoice, String target, String expectedResult) {
 
-        String searchChoice = "K";
-        String target = "key1";
-
+        // Act
         String searchResult = tableService.search(searchChoice, target);
 
-        assertEquals("Found 'key1' in row 0 with key 'key1' and value 'value1'.", searchResult);
-        System.out.println("Test Search Success");
+        assertEquals(expectedResult, searchResult);
     }
 
-    @Test
-    public void testSearchKeyNotFound() {
-        String searchChoice = "K";
-        String target = "nonexistentKey";
-
-        String searchResult = tableService.search(searchChoice, target);
-
-        // Check if the search result matches the expected result for a non-existent key
-        assertEquals("No instances of 'nonexistentKey' found.", searchResult);
-        System.out.println("Test Search Key Not Found");
-    }
 
 
     @Test
